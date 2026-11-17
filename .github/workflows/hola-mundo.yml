@@ -1,0 +1,20 @@
+name: Primer Hola Mundo en Python
+
+# Cuándo se ejecuta: cada vez que subas cambios (push) o manualmente desde la pestaña Actions
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  hola-mundo:
+    # Sistema operativo del servidor virtual donde correrá el código
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Descarga tu archivo main.py dentro del servidor de GitHub
+      - name: Hacer checkout del repositorio
+        uses: actions/checkout@v4
+
+      # Paso 2: Ejecuta el script usando Python (Ubuntu ya lo trae preinstalado)
+      - name: Ejecutar script de Python
+        run: python3 main.py

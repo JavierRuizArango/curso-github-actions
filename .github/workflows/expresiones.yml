@@ -1,0 +1,43 @@
+name: Practica de Expresiones
+
+on:
+
+  workflow_dispatch:
+     inputs:
+       edad:
+         description: 'Ingresa tu edad'
+         required: true
+         default: 20
+         type: number
+       lenguaje:
+         description: 'ingrese un lenguaje'
+         required: true
+         default: 'python'
+         type: string
+
+jobs:
+  validar-mayor:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.edad >= 18 }}
+    steps:
+        - name: Imprimir resultado mayor
+          run:  echo "Eres menor de edad"                                    
+
+  validar-menor:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.edad < 18 }}
+    steps:
+        - name: Imprimir resultado menor
+          run: echo "Eres menor de edad"
+      
+      
+
+
+
+
+
+
+
+    
+          
+          

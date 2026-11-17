@@ -1,0 +1,14 @@
+name: Practica de Contextos
+
+on:
+  workflow_dispatch: 
+  push:
+
+jobs:
+  revisar-contextos:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Leer contexto github
+        run:  echo "Ejecutado por ${{ github.actor }} en la rama ${{ github.ref }}"
+      - name: Leer contexto runner
+        run: echo ${{ runner.os }}

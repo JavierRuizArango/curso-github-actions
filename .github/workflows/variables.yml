@@ -1,0 +1,14 @@
+name: Practica de Variables
+on:
+ push:
+ workflow_dispatch:
+env:
+  CURSO: 'GitHub Actions'
+jobs:
+  probar-variables:
+      runs-on: ubuntu-latest
+      env:
+        AMBIENTE: 'Produccion'
+      steps:
+         - name: Imprimir variables
+            run: echo "Curso: ${{ env.CURSO }} - Ambiente: ${{ env.AMBIENTE }}"

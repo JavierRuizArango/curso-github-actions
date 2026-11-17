@@ -1,0 +1,19 @@
+name: Prueba de Triggers
+
+on: 
+  workflow_dispatch:
+  push:
+      branches:
+        -  aprendiendo-github-actions
+        -  main
+      paths:
+        -  '**.py'
+  schedule:
+        -  cron: '0 12 * * 1'   
+    
+jobs:
+  probar-triggers:
+    runs-on:  ubuntu-latest
+    steps:
+         -  name: Verificar trigger
+            run:  echo "trigger activado"
